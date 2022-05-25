@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Message {% endblock %}</h1>
+    <form method="post">
+
+
+        <label for="domain">DOMAIN from DOMAIN.bitrix24.ru</label>
+        <br>
+        <input type="text" name="domain"
+               placeholder="Enter DOMAIN"
+               value="{{ request.form['domain'] }}"></input>
+        <br>
+
+
+        <label for="hook_key">HOOK_KEY</label>
+        <br>
+        <input type="text" name="hook_key"
+               placeholder="Enter hook key"
+               value="{{ request.form['hook_key'] }}"></input>
+        <br>
+
+
+        <label for="title">TITLE</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Task title"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+
+        <label for="responsible_id">RESPONSIBLE_ID</label>
+        <br>
+        <input type="text" name="responsible_id"
+               placeholder="Responsible ID"
+               value="{{ request.form['responsible_id'] }}"></input>
+        <br>
+
+        <label for="description">DESCRIPTION</label>
+        <br>
+        <textarea name="description"
+                  placeholder="Task description"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['description'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
